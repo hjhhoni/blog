@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HJH的私人blog</title>
+    <link rel="shortcut icon" href="img/tou.png">
+    <link rel="stylesheet" href="./c">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+      body {
+        background-image: url(./img/back.jpg);
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        //background-color: #8da1f8;
+      }
+      .img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-image: url('./img/1.gif');
+            background-size: cover;
+        }
+
+        .nav{ 
+            width: auto;
+            height: 70px;
+            position: relative;
+            top: 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            background-color: #8da1f8;
+            /*搜索栏颜色*/
+        }
+        .nav ul{ 
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            right: 5%;
+        }
+        .nav ul .nav-box{ 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* 如果导航栏就六个导航，那么每个导航的宽度都是整个导航
+            的六分之一 */
+            width: calc((100% / 6)*1);
+            height: 10px;
+            border-radius: 2px;
+            transition: .5s;  
+        }
+        .nav ul li{ 
+            width: 100%;
+            text-align: center;
+        }
+        .nav ul li a{ 
+            color: rgb(70, 100, 180);
+            font: 100 30px '优设标题黑';
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 70px;
+        }
+        .nav ul li:nth-child(1):hover~.nav-box{ 
+            left: calc(100% / 6 *0);
+            background-color: rgb(250, 190, 250);
+        }
+        .nav ul li:nth-child(2):hover~.nav-box{ 
+            left: calc(100% / 6 *1);
+            background-color: red;
+        }
+        .nav ul li:nth-child(3):hover~.nav-box{ 
+            left: calc(100% / 6 *2);
+            background-color: #d18df8;
+        }
+        .nav ul li:nth-child(4):hover~.nav-box{ 
+            left: calc(100% / 6 *3);
+            background-color: #ffb1b1;
+        }
+    </style>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id: "Job2Y30HTNKXtuFJ",ck: "Job2Y30HTNKXtuFJ"})</script>
+  </head>
+  <body>
+    <div style="
+      background:rgba(255,255,255,0);
+      text-align: center;
+      padding: 80px;
+    ">
+      <img src="img/tou.png" alt="hjh" width="80px" height="80px">
+      <div class="nav">
+        <ul>
+            <li><a href="./index2.html">目标院校</a></li>
+            <li><a href="./index4.html">203宿舍</a></li>
+            <li><a href="./index5.html">美图鉴赏</a></li>
+            <li><a href="#">Jquery</a></li>
+            <div class="nav-box"></div>
+        </ul>
+      </div>
+    </div>
+    <div style="
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 15px;
+      line-height: 1.7;
+      background:rgba(255,255,255,0.5);
+    ">
+      <h1>简介</h1>
+      <p>欢迎来到<h3>honi</h3>的私人blog</p>
+      <p>我是练习时长两年半的编程练习生</p>
+      <p>我会python,unityC#,html</p>
+      <p>最后我会继续学习向往的知识！</p>
+      <a href="https://h7jh.github.io/warehouse/">文件仓库</a>
+      <a href="https://h7jh.github.io/miband7/">小米手环项目</a>
+      <a href="https://www.midorg.com/h.html">HTML在线工具</a>
+      <p>
+        <a href="./sds.html">圣诞树🎄</a>
+        <a href="https://github.com/H7JH/download/raw/main/fighting-game-main.zip">狂乱互砍源码</a>
+      
+      </p>
+      <h1>
+          一些游戏
+      </h1>
+      <a href="./index3.html" target="-blank" title="狂乱互砍">
+        <img src="./img/game.png">
+      </a>
+      <p>Over</p>
+      </div>
+    </div>
+    <div style="
+      background:rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;  
+    ">
+      <p>版权所有: ©H7JH.github.com</p>
+    </div>
+    <div class="img"></div>
+  </body>
+      <script>
+        let img = document.querySelector('.img')
+        // 定义小图片的旋转角度
+        let deg = 0
+        // 定义小图片位于网页左侧的位置
+        let imgx = 0
+        // 定义小图片位于网页顶部的位置
+        let imgy = 0
+        // 定义小图片x轴的位置
+        let imgl = 0
+        // 定义小图片y轴的位置
+        let imgt = 0
+        // 定义小图片翻转的角度
+        let y = 0 
+        // 定义一个计数器
+        let index = 0
+
+        window.addEventListener('mousemove',function(xyz){
+            // 获取网页左侧距离的图片位置
+            imgx = xyz.x - img.offsetLeft - img.clientWidth /2
+            // 多去网页顶部距离图片的位置
+            imgy = xyz.y - img.offsetTop - img.clientHeight /2
+            // 套入公式，定义图片的旋转角度
+            deg = 360*Math.atan(imgy/imgx)/(2*Math.PI)
+            // 每当鼠标移动的时候重置index
+            index= 0
+            // 定义当前鼠标的位置
+            let x = event.clientX
+            // 当鼠标的x轴大于图片的时候，提普安就要对着鼠标，所以需要将图片翻转过来
+            // 否则就不用翻转
+            if(img.offsetLeft<x){
+                y=-180
+            }else{
+                y=0
+            }
+        })
+        setInterval(()=>{
+            // 设置小图片的旋转和翻转
+            img.style.transform = "rotateZ("+deg+"deg) rotateY("+y+"deg)"
+            index++
+            // 在这里设置小图片的位置和速度，并判断小图片到达鼠标位置时停止移动
+            if(index<50){
+                imgl+=imgx/50
+                imgt+=imgy/50
+            }
+            img.style.left = imgl+"px"
+            img.style.top = imgt+"px"
+        },10)
+    </script>
+</html>
